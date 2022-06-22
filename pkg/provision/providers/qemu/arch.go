@@ -118,7 +118,7 @@ func (arch Arch) QemuExecutable() string {
 	}
 
 	for _, binary := range binaries {
-		if path, err := exec.LookPath(binary); err != nil {
+		if path, err := exec.LookPath(binary); err == nil {
 			return path
 		}
 	}
